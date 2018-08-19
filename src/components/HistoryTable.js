@@ -8,11 +8,11 @@ class HistoryTable extends Component {
 
     render(){
         const fakeData = [
-            ["2018-08-18",1,2,3,4,5,6],
-            ["2018-08-19",6,5,4,3,2,1],
+            ["lotto649","2018-08-18",1,2,3,4,5,6,7],
+            ["lottomax","2018-08-19",8,7,6,5,4,3,2,1],
         ]
         const dataRows = fakeData.map((entry)=>{
-            console.log(entry)
+            
             return (
                 <RenderRow key={entry[0]}
                 dateHistory={entry[0]}
@@ -45,6 +45,10 @@ class HistoryTable extends Component {
     }
 }
 
+const RenderHead = (props) => {
+
+}
+
 const RenderRow = (props) => {
     console.log(props.dateHistory);
     return (
@@ -61,3 +65,9 @@ const RenderRow = (props) => {
 }
 
 export default HistoryTable;
+
+/*
+TODO: 
+    1.想好数据传过来长什么样？
+    2.想好如何渲染Column和Row？
+*/

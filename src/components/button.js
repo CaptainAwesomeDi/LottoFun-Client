@@ -7,7 +7,7 @@ class Button extends PureComponent {
     render(){
         const onClick = this.props.onClick;
         const text = this.props.text;
-        return (<a onClick={onClick} href={text}>{text}</a>);
+        return (<button className="btn btn-primary" onClick={onClick} href={text}>{text}</button>);
     }
 }
 

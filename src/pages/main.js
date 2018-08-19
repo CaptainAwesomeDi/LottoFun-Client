@@ -8,8 +8,7 @@ export default class MainView extends Component {
     render() {
         return (
             <div>
-                <Graph/>
-                <HistoryTable/>
+                这个是主页我还没想好怎么搞
             </div>
         )
     }

@@ -9,8 +9,10 @@ class NavBar extends Component {
     render(){
         return(
             <Fragment>
-                <NavLink to="/lottomax">Lotto Max</NavLink>
-                <NavLink to="/lotto649">6/49</NavLink>
+                <div className="btn-group" role="group">
+                    <NavLink className="btn btn-primary" to="/lottomax">Lotto Max</NavLink>
+                    <NavLink className="btn btn-primary" to="/lotto649">6/49</NavLink>
+                </div>
             </Fragment>
         );
     }
