@@ -1,41 +1,52 @@
 import React, {Component} from 'react'
 import {Table} from 'reactstrap';
+import LottoMax from '../pages/lottomax';
 
 class HistoryTable extends Component {
     constructor(props){
         super(props);
     }
 
+
+
+    handleData(lottoType,data){
+        let dataRows
+        if (lottoType === 'lottoMax') {
+            dataRows = data.map((entry)=>{
+                console.log('this is the entry',entry)
+                console.log(entry.id)
+                console.log(entry.bonus)
+                return (
+                    <RenderRow key={entry.id}
+                    dateHistory={entry.date}
+                    number1={entry.numbers[0]}
+                    number2={entry.numbers[1]}
+                    number3={entry.numbers[2]}
+                    number4={entry.numbers[3]}
+                    number5={entry.numbers[4]}
+                    number6={entry.numbers[5]}
+                    number7={entry.numbers[6]}
+                    specialnum={entry.bonus}
+                    type={'lottoMax'}/>
+                )
+            })
+        } else {
+            console.log ('this is a 649 lotto')
+            dataRows = 'fakeshit'
+        }
+        return dataRows
+    }
+
     render(){
-        const fakeData = [
-            ["lotto649","2018-08-18",1,2,3,4,5,6,7],
-            ["lottomax","2018-08-19",8,7,6,5,4,3,2,1],
-        ]
-        const dataRows = fakeData.map((entry)=>{
-            
-            return (
-                <RenderRow key={entry[0]}
-                dateHistory={entry[0]}
-                number1={entry[1]}
-                number2={entry[2]}
-                number3={entry[3]}
-                number4={entry[4]}
-                number5={entry[5]}
-                specialnum={entry[6]}/>
-            )
-        })
+        const {type,data} = this.props;
+        console.log('the type of this lottery is: ',type)
+        console.log('the data of this lottery is: ', data)
+
+        const dataRows = this.handleData(type,data)
         return (
             <Table striped >
                 <thead>
-                    <tr>
-                        <th>日期</th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                        <th>特殊号码</th>
-                    </tr>
+                    <RenderHead type={type}/>
                 </thead>
                 <tbody>
                     {dataRows}
@@ -46,22 +57,69 @@ class HistoryTable extends Component {
 }
 
 const RenderHead = (props) => {
+    console.log('head type is', props.type)
+    if (props.type === 'lottoMax'){
+        return (
+            <tr>
+            <th>日期</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>特殊号码</th>
+        </tr>
+        )
+    }else{
+        return(
+            <tr>
+                <th>日期</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>特殊号码</th>
+            </tr>
+        )
+    }
 
 }
 
 const RenderRow = (props) => {
     console.log(props.dateHistory);
-    return (
-        <tr>
+
+    if (props.type === 'lottoMax') {
+        return (
+            <tr>
             <th scope="row">{props.dateHistory}</th>
             <th>{props.number1}</th>
             <th>{props.number2}</th>
             <th>{props.number3}</th>
             <th>{props.number4}</th>
             <th>{props.number5}</th>
+            <th>{props.number6}</th>
+            <th>{props.number7}</th>
             <th>{props.specialnum}</th>
         </tr>
-    )
+        )
+    } else{
+        return (
+            <tr>
+                <th scope="row">{props.dateHistory}</th>
+                <th>{props.number1}</th>
+                <th>{props.number2}</th>
+                <th>{props.number3}</th>
+                <th>{props.number4}</th>
+                <th>{props.number5}</th>
+                <th>{props.specialnum}</th>
+            </tr>
+            )
+    }
+
 }
 
 export default HistoryTable;
