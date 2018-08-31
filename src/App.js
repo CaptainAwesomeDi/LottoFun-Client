@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Switch, Route} from 'react-router-dom'
-import MainView from './pages/main.js'
+import Main from './pages/main.js'
 import Lotto649 from './pages/lotto649'
 import LottoMax from './pages/lottomax'
 import Navbar from './components/navbar'
@@ -13,7 +13,7 @@ class App extends Component {
         <div className="App">
           <Navbar/>
           <Switch>
-            <Route exact path='/' component={MainView}/>
+            <Route exact path='/' component={Main}/>
             <Route path='/lottomax' component={LottoMax}/>
             <Route path='/lotto649' component={Lotto649}/>
             <Route component={NoMatch}/>

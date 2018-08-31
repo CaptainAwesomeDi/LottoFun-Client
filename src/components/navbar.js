@@ -1,10 +1,7 @@
-import React, {Component,Fragment} from 'react';
+import React, {PureComponent,Fragment} from 'react';
 import { NavLink } from "react-router-dom";
 
-class NavBar extends Component {
-    constructor(props) {
-        super(props);
-    }
+class NavBar extends PureComponent {
 
     render(){
         return(

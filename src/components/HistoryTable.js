@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
 import {Table} from 'reactstrap';
-import LottoMax from '../pages/lottomax';
 
 class HistoryTable extends Component {
-    constructor(props){
-        super(props);
-    }
-
-
 
     handleData(lottoType,data){
         let dataRows
@@ -31,8 +25,23 @@ class HistoryTable extends Component {
                 )
             })
         } else {
-            console.log ('this is a 649 lotto')
-            dataRows = 'fakeshit'
+            dataRows = data.map((entry)=>{
+                console.log('this is the entry',entry)
+                console.log(entry.id)
+                console.log(entry.bonus)
+                return (
+                    <RenderRow key={entry.id}
+                    dateHistory={entry.date}
+                    number1={entry.numbers[0]}
+                    number2={entry.numbers[1]}
+                    number3={entry.numbers[2]}
+                    number4={entry.numbers[3]}
+                    number5={entry.numbers[4]}
+                    number6={entry.numbers[5]}
+                    specialnum={entry.bonus}
+                    type={'lotto649'}/>
+                )
+            })
         }
         return dataRows
     }
@@ -115,6 +124,7 @@ const RenderRow = (props) => {
                 <th>{props.number3}</th>
                 <th>{props.number4}</th>
                 <th>{props.number5}</th>
+                <th>{props.number6}</th>
                 <th>{props.specialnum}</th>
             </tr>
             )
