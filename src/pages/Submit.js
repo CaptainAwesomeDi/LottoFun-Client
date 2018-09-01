@@ -10,7 +10,7 @@ import {
 import DatePicker from 'react-datepicker'
 import {connect} from 'react-redux'
 import moment from 'moment'
-import CustomDatePicker from '../components/CustomDatePicker'
+import {CustomDatePicker} from '../components/CustomDatePicker'
 
 import 'react-datepicker/dist/react-datepicker.css';
 export default class Submit extends Component {
