@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import Graph from '../components/selector'
 import HistoryTable from '../components/HistoryTable'
+import HeatMap from '../components/heatMap'
 
 export default class Lotto649 extends Component {
 
@@ -22,6 +23,7 @@ export default class Lotto649 extends Component {
             <Fragment>
                 <Graph type={'lotto649'} data={fakeData}/>
                 <HistoryTable type={'lotto649'} data={fakeData}/>
+                <HeatMap />
             </Fragment>
         )
     }
