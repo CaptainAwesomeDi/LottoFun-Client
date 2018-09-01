@@ -4,6 +4,7 @@ import Main from './pages/main.js'
 import Lotto649 from './pages/lotto649'
 import LottoMax from './pages/lottomax'
 import Navbar from './components/navbar'
+import Submit from './pages/Submit'
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
             <Route exact path='/' component={Main}/>
             <Route path='/lottomax' component={LottoMax}/>
             <Route path='/lotto649' component={Lotto649}/>
+            <Route path='/submit' component={Submit}/>
             <Route component={NoMatch}/>
           </Switch>
         </div>

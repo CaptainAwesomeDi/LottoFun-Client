@@ -1,6 +1,7 @@
 import React,{Component,Fragment} from 'react'
 import HistoryTable from '../components/HistoryTable'
 import Graph from '../components/selector'
+import {Link} from 'react-router-dom'
 export default class LottoMax extends Component {
     render () {
         const fakeData = [
@@ -18,9 +19,14 @@ export default class LottoMax extends Component {
             }]
         return (
             <Fragment>
-                <Graph type={'lottoMax'}data={fakeData}/>
-                <HistoryTable type={'lottoMax'} data={fakeData}/>
+                <div>
+                    <Graph type={'lottoMax'}data={fakeData}/>
+                    <HistoryTable type={'lottoMax'} data={fakeData}/>
+                </div>
+                <div>
+                    <Link to="/submit">添加新记录</Link>
+                </div>
             </Fragment>
         )
     }
-} 
+}
