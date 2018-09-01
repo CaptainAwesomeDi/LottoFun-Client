@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Switch, Route} from 'react-router-dom'
-import Main from './pages/main.js'
+import Main from './pages/Main'
 import Lotto649 from './pages/lotto649'
 import LottoMax from './pages/lottomax'
 import Navbar from './components/navbar'

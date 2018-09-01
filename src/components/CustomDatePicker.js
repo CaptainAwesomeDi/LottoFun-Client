@@ -8,19 +8,15 @@ const mapStateToProps = state => ({
   select_date: state.select_date
 })
 
-// const mapDispatchToProps = dispatch => ({
-//   select_date: date => dispatch(select_date(date))
-// })
+const mapDispatchToProps = dispatch => ({
+  select_date: date => dispatch(select_date(date))
+})
 
-const mapDispatchToProps = dispatch => {
-  return {
-    select_date: date => dispatch(select_date(date))
-  }
-}
 class MyCustomDatePicker extends Component {
 
   handleChange=(event)=> {
     console.log('going to handleChange',event.target.value)
+    console.log(this.props)
     this.props.select_date(event.target.value)
   }
 
@@ -33,9 +29,6 @@ class MyCustomDatePicker extends Component {
     }
     const showLottoMaxSelect = MaxList.map(item=>(<option>{item}</option>))
 
-
-   // const fakeDates = [{},{}]
-    //const mapFromStartDate
     return (
       <FormGroup>
         {console.log(MaxList)}
@@ -48,6 +41,6 @@ class MyCustomDatePicker extends Component {
   }
 }
 
-const CustomDatePicker = connect(mapStateToProps,mapStateToProps)(MyCustomDatePicker)
+const CustomDatePicker = connect(mapStateToProps,mapDispatchToProps)(MyCustomDatePicker)
 
 export {CustomDatePicker}
