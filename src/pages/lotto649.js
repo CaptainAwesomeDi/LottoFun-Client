@@ -23,6 +23,7 @@ export default class Lotto649 extends Component {
             <Fragment>
                 <Graph type={'lotto649'} data={fakeData}/>
                 <HistoryTable type={'lotto649'} data={fakeData}/>
+                <HeatMap />
             </Fragment>
         )
     }
