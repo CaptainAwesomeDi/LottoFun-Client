@@ -2,7 +2,9 @@ import React,{Component} from 'react';
 import {Line} from 'react-chartjs-2'
 
 class Graph extends Component {
+    componentDidMount(){
 
+    }
     render(){
         const fakedata = {
             labels:["1","2","3","4"],

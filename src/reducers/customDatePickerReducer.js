@@ -5,7 +5,7 @@ import {
 
 const initState = {
   selected_date:"",
-  game_type:"",
+  game_type:"Lotto Max",
 }
 
 const customDatePickerReducer = (state = initState, action) => {

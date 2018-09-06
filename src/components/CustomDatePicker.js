@@ -5,8 +5,8 @@ import {connect} from 'react-redux'
 import {select_date,select_game_type} from '../actions/actions'
 
 const mapStateToProps = state => ({
-  select_date: state.select_date,
-  select_game_type: state.select_game_type,
+    selected_date: state.customDatePickerReducer.selected_date,
+    game_type: state.customDatePickerReducer.game_type,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -17,30 +17,28 @@ const mapDispatchToProps = dispatch => ({
 class MyCustomDatePicker extends Component {
 
   handleChange=(event)=> {
-    console.log('going to handleChange',event.target.value)
-    console.log(this.props)
     this.props.select_date(event.target.value)
   }
 
   handleGameChange=(event)=>{
     this.props.select_game_type(event.target.value)
-    console.log("game_type_selected:",event.target.value)
   }
 
   render() {
     let MaxList = []
-    let IteratorVaule
-    this.props.game_type === 'Lotto Max'? IteratorVaule = 3 : IteratorVaule = 5
-      // 3 presents Wednesday
-
     for (let i=0; i < 10000; i+=7 ) {
-      MaxList.push(moment(Date.now(), "x").day(IteratorVaule+i).format('dddd MMM Do YY'))
+      if (this.props.game_type === 'Lotto Max'){
+        MaxList.push(moment(Date.now(), "x").day(5 + i).format('dddd MMM Do YY'))
+      } else {
+        MaxList.push(moment(Date.now(), "x").day(3 + i).format('dddd MMM Do YY'))
+        MaxList.push(moment(Date.now(), "x").day(6 + i).format('dddd MMM Do YY'))
+      }
     }
     const showLottoMaxSelect = MaxList.map(item=>(<option>{item}</option>))
 
     return (
       <FormGroup>
-        {console.log(MaxList)}
+        {console.log(this.props)}
         <Label for='customDatePicker'>选择游戏类型</Label>
         <Input type='select' name='select' id='gameSelect' onChange={this.handleGameChange}>
           <option>Lotto Max</option>

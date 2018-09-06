@@ -7,9 +7,6 @@ class HistoryTable extends Component {
         let dataRows
         if (lottoType === 'lottoMax') {
             dataRows = data.map((entry)=>{
-                console.log('this is the entry',entry)
-                console.log(entry.id)
-                console.log(entry.bonus)
                 return (
                     <RenderRow key={entry.id}
                     dateHistory={entry.date}
@@ -26,9 +23,6 @@ class HistoryTable extends Component {
             })
         } else {
             dataRows = data.map((entry)=>{
-                console.log('this is the entry',entry)
-                console.log(entry.id)
-                console.log(entry.bonus)
                 return (
                     <RenderRow key={entry.id}
                     dateHistory={entry.date}
@@ -135,7 +129,7 @@ const RenderRow = (props) => {
 export default HistoryTable;
 
 /*
-TODO: 
+TODO:
     1.想好数据传过来长什么样？
     2.想好如何渲染Column和Row？
 */

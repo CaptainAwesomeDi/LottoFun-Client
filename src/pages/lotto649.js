@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import Graph from '../components/selector'
+import Graph from '../components/Graph'
 import HistoryTable from '../components/HistoryTable'
 import HeatMap from '../components/heatMap'
 

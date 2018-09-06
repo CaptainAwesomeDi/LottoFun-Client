@@ -1,6 +1,6 @@
 import React,{Component,Fragment} from 'react'
 import HistoryTable from '../components/HistoryTable'
-import Graph from '../components/selector'
+import Graph from '../components/Graph'
 import {Link} from 'react-router-dom'
 export default class LottoMax extends Component {
     render () {

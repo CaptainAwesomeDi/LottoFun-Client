@@ -10,7 +10,6 @@
     "react": "^16.4.2",
     "react-apexcharts": "^1.0.7",
     "react-chartjs-2": "^2.7.4",
-    "react-datepicker": "^1.6.0",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

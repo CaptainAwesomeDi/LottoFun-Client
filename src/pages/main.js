@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// import Graph from '../components/selector'
-// import HistoryTable from '../components/HistoryTable'
 import Button from '../components/button'
 import {increment} from '../actions/actions'
 import {connect} from 'react-redux'
@@ -11,7 +9,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 const mapStateToProps = state => {
-    return ({count: state.count})
+    console.log(state.count)
+    return ({
+        count: state.rootReducer.count
+    })
 }
 class MainView extends Component {
 
