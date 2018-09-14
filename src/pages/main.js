@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Button from '../components/button'
 import {increment} from '../actions/actions'
 import {connect} from 'react-redux'
+import {GridSelector} from '../components/gridSelector/gridSelector'
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -26,6 +27,7 @@ class MainView extends Component {
             <div>
                 这个是主页我还没想好怎么搞
                 <Button onClick={this.handleOnClick} text={count}/>
+                <GridSelector/>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import { INCREMENT } from '../constants/index'
 import {customDatePickerReducer} from './customDatePickerReducer'
-
+import {gridSelectorReducer} from '../components/gridSelector/gridSelectorReducer'
 // this is an example of increment clicker using redux
 const initialState = {count:0}
 const rootReducer = (state = initialState, action) => {
@@ -18,4 +18,5 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default combineReducers ({ rootReducer,customDatePickerReducer })
+export default combineReducers ({ rootReducer,customDatePickerReducer,
+gridSelectorReducer })
